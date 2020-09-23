@@ -2,16 +2,18 @@ package main
 
 import (
 	"context"
+	"envoy-test-filter/filters"
+
+	//filters "envoy-test-filter/filters"
 	"fmt"
 	ext_authz "github.com/envoyproxy/go-control-plane/envoy/service/auth/v2"
+	"github.com/gogo/googleapis/google/rpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 	"os"
 	"os/signal"
-	"google.golang.org/genproto/googleapis/rpc/status"
-	"github.com/gogo/googleapis/google/rpc"
 )
 
 type server struct {
@@ -42,15 +44,29 @@ func listen(address string, serverType *server) {
 }
 
 func (s *server) Check(ctx context.Context, req *ext_authz.CheckRequest) (*ext_authz.CheckResponse, error) {
-// fmt.Print(req)
-	resp := &ext_authz.CheckResponse{}
-	resp = &ext_authz.CheckResponse{
-			Status: &status.Status{Code: int32(rpc.OK)},
-			HttpResponse: &ext_authz.CheckResponse_OkResponse{
-				OkResponse: &ext_authz.OkHttpResponse{
 
-				},
-			},
-		}
-	return resp, nil
+	fmt.Printf("======================================== %-24s ========================================\n", fmt.Sprintf("%s Start", s.mode))
+	//defer fmt.Printf("======================================== %-24s ========================================\n\n", fmt.Sprintf("%s End", s.mode))
+
+	//m := jsonpb.Marshaler{Indent: "  "}
+	//js, err := m.MarshalToString(req)
+
+	/*if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(js)
+	}*/
+    // Validate the token by calling the token filter.
+	resp , err := filters.ValidateToken(ctx, req)
+
+	//Return if the authentication failed
+	if resp.Status.Code != int32(rpc.OK) {
+		return resp, nil
+	}
+	//Continue to next filter
+
+	// Publish metrics
+	//resp , err = filters.PublishMetrics(ctx, req)
+
+	return resp, err
 }
