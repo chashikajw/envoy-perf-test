@@ -1,0 +1,12 @@
+2020-09-21 09:33:37,457 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:118) - Echo HTTP/1.1 Server. Port: 8688, Boss Threads: 8, Worker Threads: 16, SSL Enabled: false, Sleep Time: 0ms
+2020-09-21 09:33:37,459 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:121) - Max Heap Size: 3925MB
+2020-09-21 09:33:37,461 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:124) - Netty Version: 4.1.36.Final
+2020-09-21 09:34:16,454 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:118) - Echo HTTP/1.1 Server. Port: 8688, Boss Threads: 8, Worker Threads: 16, SSL Enabled: false, Sleep Time: 0ms
+2020-09-21 09:34:16,457 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:121) - Max Heap Size: 3925MB
+2020-09-21 09:34:16,459 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:124) - Netty Version: 4.1.36.Final
+2020-09-21 09:34:25,791 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:118) - Echo HTTP/1.1 Server. Port: 8688, Boss Threads: 8, Worker Threads: 16, SSL Enabled: false, Sleep Time: 0ms
+2020-09-21 09:34:25,793 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:121) - Max Heap Size: 3925MB
+2020-09-21 09:34:25,795 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:124) - Netty Version: 4.1.36.Final
+2020-09-21 09:43:25,237 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:118) - Echo HTTP/1.1 Server. Port: 8688, Boss Threads: 8, Worker Threads: 16, SSL Enabled: false, Sleep Time: 0ms
+2020-09-21 09:43:25,240 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:121) - Max Heap Size: 3925MB
+2020-09-21 09:43:25,243 INFO  [main] echo.EchoHttpServer (EchoHttpServer.java:124) - Netty Version: 4.1.36.Final
