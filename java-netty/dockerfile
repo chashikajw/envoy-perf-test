@@ -1,0 +1,10 @@
+FROM adoptopenjdk:8u222-b10-jdk-hotspot
+
+COPY netty-service /home/netty-service/
+
+ENV JAVA_OPTS=""
+
+ # expose ports
+EXPOSE 8688
+
+CMD java $JAVA_OPTS -jar /home/netty-service/netty-http-echo-service-0.4.6-SNAPSHOT.jar
